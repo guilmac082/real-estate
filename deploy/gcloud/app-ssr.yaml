@@ -1,0 +1,27 @@
+# https://cloud.google.com/apigee/docs/api-platform/local-development/overview
+service: quasar-real-estate-ssr
+runtime: nodejs16
+env: standard
+instance_class: F1
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+env_variables:
+# below are informational more than anything else
+  THEME_NAME: "toronto"
+  UPLOADS_BASE_URL: "https://pwb-v2.propertywebbuilder.com"
+
+# default_expiration: "4d 5h"
+# handlers:
+# - url: /stylesheets
+#   static_dir: stylesheets
+#   expiration: "0d 0h"
+
+# handlers:
+#   - url: /
+#     secure: always
+#     http_headers:
+#       Access-Control-Allow-Origin: '*'
+#       Strict-Transport-Security: 'max-age=63072000; includeSubDomains'
