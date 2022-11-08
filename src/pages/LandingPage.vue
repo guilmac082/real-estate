@@ -977,7 +977,7 @@
 <script>
 import { defineComponent, ref } from "vue";
 
-import PwbSubHeader from "src/components/theme-frames/mega/PwbSubHeader.vue";
+import PwbSubHeader from "src/components/theme-frames/florida/PwbSubHeader.vue";
 export default defineComponent({
   name: "LandingPage",
   components: { PwbSubHeader },
