@@ -49,7 +49,7 @@
     </q-drawer>
     <q-page>
       <q-scroll-observer @scroll="onScroll" />
-      <div>
+      <!-- <div>
         <q-toolbar
           :class="
             ((scrollInfo && scrollInfo.position && scrollInfo.position.top) || 0) > 130
@@ -60,11 +60,11 @@
           style="height: 90px; z-index: 2"
         >
           <q-toolbar-title :class="$q.platform.is.mobile ? 'text-center' : ''">
-            <!-- <q-img
+             <q-img
               class="q-ma-lg q-ml-xl"
               style="width: 140px"
               src="../assets/LOGO.svg"
-            /> -->
+            />
           </q-toolbar-title>
           <div>
             <q-btn
@@ -90,9 +90,8 @@
             </q-btn>
           </div>
         </q-toolbar>
-        <!-- <PwbSubHeader></PwbSubHeader> -->
-        <component :is="subHeaderFrame.frameComponent"></component>
-      </div>
+      </div> -->
+      <component :is="subHeaderFrame.frameComponent"></component>
       <div style="margin: 80px 0 30px 0">
         <div
           class="q-my-none text-center"

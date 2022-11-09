@@ -1,5 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lff">
+    <component :is="headerFrame.frameComponent"></component>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -21,6 +22,17 @@ export default defineComponent({
   components: {},
 
   computed: {
+    headerFrame() {
+      const frameComponent = defineAsyncComponent(() =>
+        import(
+          /* @vite-ignore */ `/src/components/theme-frames/${this.themeForFrames}/PwbHeader.vue`
+        )
+      )
+      return {
+        details: {},
+        frameComponent,
+      }
+    },
     footerFrame() {
       const frameComponent = defineAsyncComponent(() =>
         import(
