@@ -14,7 +14,7 @@ export default defineComponent({
   name: "MainLayout",
   data() {
     return {
-      themeForFrames: "mega",
+      themeForFrames: process.env.THEME_NAME, // "mega",
       // themeForFrames: "florida",
     }
   },
