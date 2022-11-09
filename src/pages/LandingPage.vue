@@ -91,7 +91,8 @@
             </q-btn>
           </div>
         </q-toolbar>
-        <PwbSubHeader></PwbSubHeader>
+        <!-- <PwbSubHeader></PwbSubHeader> -->
+        <component :is="subHeaderFrame.frameComponent"></component>
       </div>
       <div style="margin: 80px 0 30px 0">
         <div
@@ -975,12 +976,30 @@
 </template>
 
 <script>
-import { defineComponent, ref } from "vue";
-
-import PwbSubHeader from "src/components/theme-frames/florida/PwbSubHeader.vue";
+import { defineComponent, defineAsyncComponent, ref } from "vue";
+// import PwbSubHeader from "src/components/theme-frames/florida/PwbSubHeader.vue";
 export default defineComponent({
   name: "LandingPage",
-  components: { PwbSubHeader },
+  // components: { PwbSubHeader },
+  data() {
+    return {
+      themeForFrames: "mega",
+      // themeForFrames: "florida",
+    };
+  },
+  computed: {
+    subHeaderFrame() {
+      const frameComponent = defineAsyncComponent(() =>
+        import(
+          /* @vite-ignore */ `/src/components/theme-frames/${this.themeForFrames}/PwbSubHeader.vue`
+        )
+      );
+      return {
+        details: {},
+        frameComponent,
+      };
+    },
+  },
   setup() {
     const scrollInfo = ref({});
     return {
