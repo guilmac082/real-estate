@@ -774,8 +774,14 @@ export default defineComponent({
   data() {
     return {
       // themeForFrames: "mega",
-      themeForFrames: "florida",
+      // themeForFrames: "florida",
     }
+  },
+  props: {
+    themeForFrames: {
+      type: String,
+      default: "mega",
+    },
   },
   mounted() {
     // Trying to use a query string to set the variable used for dynamically

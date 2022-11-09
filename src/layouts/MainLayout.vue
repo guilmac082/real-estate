@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lff">
     <component :is="headerFrame.frameComponent"></component>
     <q-page-container>
-      <router-view />
+      <router-view :themeForFrames="themeForFrames" />
     </q-page-container>
     <component :is="footerFrame.frameComponent"></component>
   </q-layout>

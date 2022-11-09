@@ -40,7 +40,7 @@
 import { defineComponent, ref } from "vue"
 export default defineComponent({
   name: "PwbFooter",
-  inject: ["sitedetailsProvider"],
+  // inject: ["sitedetailsProvider"],
   mounted() {
     setTimeout(() => {
       // footer sometimes loading before rest of page
