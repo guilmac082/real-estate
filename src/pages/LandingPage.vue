@@ -844,16 +844,27 @@
 </template>
 
 <script>
-import { defineComponent, defineAsyncComponent, ref } from "vue";
+import { defineComponent, defineAsyncComponent, ref } from "vue"
 // import PwbSubHeader from "src/components/theme-frames/florida/PwbSubHeader.vue";
 export default defineComponent({
   name: "LandingPage",
   // components: { PwbSubHeader },
   data() {
     return {
-      themeForFrames: "mega",
-      // themeForFrames: "florida",
-    };
+      // themeForFrames: "mega",
+      themeForFrames: "florida",
+    }
+  },
+  mounted() {
+    // Trying to use a query string to set the variable used for dynamically
+    // loading a component does not work.
+    // if (!process.env.SERVER) {
+    //   const reqQuery = new URL(document.location).searchParams
+    //   const queryThemeName = reqQuery.get("theme")
+    //   if (queryThemeName && ["mega", "florida"].includes(queryThemeName)) {
+    //     this.themeForFrames = queryThemeName
+    //   }
+    // }
   },
   computed: {
     subHeaderFrame() {
@@ -861,15 +872,15 @@ export default defineComponent({
         import(
           /* @vite-ignore */ `/src/components/theme-frames/${this.themeForFrames}/PwbSubHeader.vue`
         )
-      );
+      )
       return {
         details: {},
         frameComponent,
-      };
+      }
     },
   },
   setup() {
-    const scrollInfo = ref({});
+    const scrollInfo = ref({})
     return {
       menu: ref(false),
       slide: ref(1),
@@ -880,11 +891,11 @@ export default defineComponent({
       selected_lang: ref("EN"),
       scrollInfo,
       onScroll(info) {
-        scrollInfo.value = info;
+        scrollInfo.value = info
       },
-    };
+    }
   },
-});
+})
 </script>
 <style>
 .q-page-sticky--expand {
