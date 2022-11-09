@@ -1,4 +1,5 @@
 {
+  "vue3snippets.semi": false,
   "terminal.integrated.fontSize": 16,
   "editor.bracketPairColorization.enabled": true,
   "editor.guides.bracketPairs": true,
