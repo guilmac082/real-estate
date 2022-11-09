@@ -1,14 +1,9 @@
 <template>
   <div>
     <div>
-      <div
-        class="pic-wrapper flex flex-center"
-        style="height: 100vh; margin-top: -90px"
-      >
+      <div class="pic-wrapper flex flex-center" style="height: 100vh; margin-top: -90px">
         <div
-          :style="
-            'z-index: 1;width: ' + ($q.platform.is.mobile ? '95%' : '70%')
-          "
+          :style="'z-index: 1;width: ' + ($q.platform.is.mobile ? '95%' : '70%')"
           style="margin-top: 10%"
         >
           <div class="typewriter text-h5 flex flex-center text-white live_text">
@@ -19,27 +14,13 @@
             class="q-mt-sm row rounded-borders q-pa-sm"
           >
             <div class="q-pa-sm col-md-3 col-lg-3 col-sm-12 col-xs-12">
-              <q-input
-                bg-color="white"
-                dense
-                label="All Cities"
-                outlined
-              ></q-input>
+              <q-input bg-color="white" dense label="All Cities" outlined></q-input>
             </div>
             <div class="q-pa-sm col-md-7 col-lg-7 col-sm-12 col-xs-12">
-              <q-input
-                bg-color="white"
-                dense
-                label="Keyword"
-                outlined
-              ></q-input>
+              <q-input bg-color="white" dense label="Keyword" outlined></q-input>
             </div>
             <div class="q-pa-sm col-md-2 col-lg-2 col-sm-12 col-xs-12">
-              <q-btn
-                color="grey-10"
-                class="full-width text-capitalize"
-                label="Search"
-              />
+              <q-btn color="grey-10" class="full-width text-capitalize" label="Search" />
             </div>
           </div>
         </div>
@@ -52,18 +33,18 @@
   </div>
 </template>
 <script>
-import defBgImgUrl from "assets/1.jpg";
-import { defineComponent, ref } from "vue";
+import defBgImgUrl from "assets/1.jpg"
+import { defineComponent, ref } from "vue"
 export default defineComponent({
   name: "PwbSubHeader",
   created() {
-    this.defBgImgUrl = defBgImgUrl;
+    this.defBgImgUrl = defBgImgUrl
   },
   components: {},
   data() {
     return {
       // subHeaderHeight: "400px",
-    };
+    }
   },
   props: {
     subHeaderBgImgUrl: {
@@ -76,13 +57,13 @@ export default defineComponent({
   computed: {
     bgUrl() {
       if (this.subHeaderBgImgUrl) {
-        return `url(${this.subHeaderBgImgUrl})`;
+        return `url(${this.subHeaderBgImgUrl})`
       } else {
-        return `url(${defBgImgUrl})`;
+        return `url(${defBgImgUrl})`
       }
     },
   },
-});
+})
 </script>
 <style>
 .pic-wrapper {
