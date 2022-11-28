@@ -36,108 +36,14 @@
       </q-btn>
     </div>
   </q-toolbar>
-  <!-- <q-header class="main-pwb-header"
-            elevated>
-    <div class="row q-toolbar"
-         style="min-height: 10px; border-bottom: 1px solid white">
-      <div class="col-xs-12">
-        <div class="aa-header-area max-ctr">
-          <div class="row text-weight-medium">
-            <div class="col-md-6 col-sm-6 col-xs-6">
-              <div class="aa-header-left">
-                <div class="aa-telephone-no float-left q-pl-sm">
-                  <q-icon class="q-pb-xs q-pr-xs"
-                          name="phone" />
-                  <div class="q-pt-xs"
-                       style="display: inline-flex">
-                    {{ sitedetailsProvider.state.agency.phoneNumberPrimary }}
-                  </div>
-                </div>
-                <div class="aa-email mobile-hide float-left">
-                  <q-icon class="q-pb-xs q-pr-xs q-pl-md"
-                          name="email" />
-                  <div class="q-pt-xs"
-                       style="display: inline-flex">
-                    {{ sitedetailsProvider.state.agency.emailPrimary }}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6">
-              <div class="aa-header-right">
-                <div class="contenedor_idiomas"
-                     style="">
-                  <ul class="idiomas">
-                    <router-link v-for="langNav in langNavs"
-                                 :key="langNav.shortLocale"
-                                 active-class="selected"
-                                 :to="langNav.route"
-                                 custom
-                                 v-slot="{ href, navigate, isActive, isExactActive }">
-                      <li :class="[
-                        isActive && 'selected',
-                        isExactActive && 'router-link-exact-active',
-                      ]">
-                        <a :class="langNav.shortLocale"
-                           :href="href"
-                           @click="navigate"></a>
-                      </li>
-                    </router-link>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <q-toolbar class="max-ctr q-pl-sm q-pr-none">
-      <q-toolbar-title class="q-pl-sm">
-        <a href="/"
-           style="color: inherit;">
-          <div class="q-px-sm"
-               style="width: fit-content;border: 1px solid;">
-            Luxury Listings Marbella
-          </div>
-        </a>
-      </q-toolbar-title>
-      <div class=" q-gutter-sm row items-center no-wrap">
-      </div>
-      <div class="mobile-only">
-        <q-btn square
-               dense
-               class="q-ma-sm pwb-header-tabs-mobile"
-               icon="menu">
-          <q-menu>
-            <q-list style="min-width: 100px">
-              <q-item v-for="topNavLink in topNavLinks"
-                      :key="topNavLink.id"
-                      :to="topNavLink.route"
-                      :label="topNavLink.linkTitle"
-                      :exact="true">
-                <q-item-section>{{ topNavLink.linkTitle }}</q-item-section>
-              </q-item>
-            </q-list>
-          </q-menu>
-        </q-btn>
-      </div>
-      <q-tabs class="mobile-hide pwb-header-tabs"
-              shrink>
-        <q-route-tab v-for="topNavLink in topNavLinks"
-                     :key="topNavLink.id"
-                     :to="topNavLink.route"
-                     :label="topNavLink.linkTitle"
-                     :exact="true" />
-      </q-tabs>
-    </q-toolbar>
-  </q-header> -->
+  <!-- -->
 </template>
 <script>
 import { defineComponent, ref } from "vue"
 import subHeaderLogoUrl from "assets/images/llm/logo-180x180-bg-black.jpeg"
 export default defineComponent({
   name: "PwbHeader",
-  inject: ["sitedetailsProvider"],
+  // inject: ["sitedetailsProvider"],
   setup() {
     const scrollInfo = ref({})
     return {
@@ -186,9 +92,9 @@ export default defineComponent({
       })
       return langNavs
     },
-    topNavLinks() {
-      return this.sitedetailsProvider.state.topNavLinkItems
-    },
+    // topNavLinks() {
+    //   return this.sitedetailsProvider.state.topNavLinkItems
+    // },
   },
 })
 </script>
