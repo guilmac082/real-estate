@@ -26,8 +26,8 @@ const routes = (ssrContext) => {
       path: '/',
       component: () => import(/* @vite-ignore */`/src/layouts/${themeFrameName}/MainLayout.vue`),
       children: [
-        { path: '', component: () => import('pages/IndexPage.vue') },
-        { path: 'landing', component: () => import('pages/LandingPage.vue') }
+        { path: '', component: () => import('pages/LandingPage.vue') },
+        // { path: 'landing', component: () => import('pages/LandingPage.vue') }
       ]
     },
 
