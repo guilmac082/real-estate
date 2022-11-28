@@ -11,14 +11,20 @@ import routes from './routes'
  * with the Router instance.
  */
 
-export default route(function (/* { store, ssrContext } */) {
+export default route(function ({ store, ssrContext }) {
   const createHistory = process.env.SERVER
     ? createMemoryHistory
     : (process.env.VUE_ROUTER_MODE === 'history' ? createWebHistory : createWebHashHistory)
 
+  // if (ssrContext && ssrContext.req) {
+  //   console.log(`ssr hostname.... is ${ssrContext.req.hostname}`)
+  // }
   const Router = createRouter({
     scrollBehavior: () => ({ left: 0, top: 0 }),
-    routes,
+    // routes,
+    routes: routes(ssrContext),
+    // mode: process.env.VUE_ROUTER_MODE,
+    // base: process.env.VUE_ROUTER_BASE
 
     // Leave this as is and make changes in quasar.conf.js instead!
     // quasar.conf.js -> build -> vueRouterMode
