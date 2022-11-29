@@ -9,13 +9,13 @@
                 <div class="aa-telephone-no float-left q-pl-sm">
                   <q-icon class="q-pb-xs q-pr-xs" name="phone" />
                   <div class="q-pt-xs" style="display: inline-flex">
-                    <!-- {{ sitedetailsProvider.state.agency.phoneNumberPrimary }} -->
+                    {{ sitedetailsProvider.state.agency.phoneNumberPrimary }}
                   </div>
                 </div>
                 <div class="aa-email mobile-hide float-left">
                   <q-icon class="q-pb-xs q-pr-xs q-pl-md" name="email" />
                   <div class="q-pt-xs" style="display: inline-flex">
-                    <!-- {{ sitedetailsProvider.state.agency.emailPrimary }} -->
+                    {{ sitedetailsProvider.state.agency.emailPrimary }}
                   </div>
                 </div>
               </div>
@@ -57,10 +57,10 @@
       <q-toolbar-title class="q-pl-sm">
         <a href="/" style="color: inherit">
           <div class="q-px-sm" style="width: fit-content; border: 1px solid">
-            Luxury Listings Marbella
+            {{ sitedetailsProvider.state.agency.displayName }}
           </div>
         </a>
-        <!-- <strong>{{ sitedetailsProvider.state.agency.displayName }}</strong> -->
+        <!-- <strong></strong> -->
       </q-toolbar-title>
       <!-- <q-space /> -->
       <div class="q-gutter-sm row items-center no-wrap"></div>

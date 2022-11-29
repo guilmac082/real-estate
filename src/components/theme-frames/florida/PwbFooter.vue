@@ -1,6 +1,6 @@
 <template>
   <q-footer v-if="timeToShowFooter" :style="mainFooterStyle" elevated class="">
-    <!-- <div class="pwb-footer-sec-1" style="">
+    <div class="pwb-footer-sec-1" style="">
       <q-toolbar>
         <div class="width-full text-center q-pa-md text-body1">
           <router-link
@@ -23,13 +23,13 @@
           </a>
         </div>
       </q-toolbar>
-    </div> -->
+    </div>
     <div class="pwb-footer-sec-2" style="height: 30px">
       <div class="copyright-foot width-full q-pa-sm">
         <div :class="copywriteClass">
           Copyright © 2021 - 2022
           <a class="" href="/" style="text-decoration: none; color: inherit">
-            Luxury Listings Marbella
+            {{ sitedetailsProvider.state.agency.displayName }}
           </a>
         </div>
       </div>
@@ -40,7 +40,7 @@
 import { defineComponent, ref } from "vue"
 export default defineComponent({
   name: "PwbFooter",
-  // inject: ["sitedetailsProvider"],
+  inject: ["sitedetailsProvider"],
   mounted() {
     setTimeout(() => {
       // footer sometimes loading before rest of page
@@ -58,14 +58,7 @@ export default defineComponent({
       },
     }
   },
-  props: {
-    // thm: {
-    //   type: Object,
-    //   default() {
-    //     return {}
-    //   },
-    // },
-  },
+  props: {},
   computed: {
     mainFooterStyle() {
       return (
@@ -102,6 +95,6 @@ Should be possible to use css vars like so but does not seem to work:
 .pwb-footer-sec-1,
 .pwb-footer-sec-2 {
   color: var(--q-pwb-primary-contrast);
-  /* background: var(--q-pwb-primary) */
+  background: var(--q-pwb-primary);
 }
 </style>

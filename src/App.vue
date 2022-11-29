@@ -23,7 +23,10 @@ export default defineComponent({
   methods: {
     setupSiteData() {
       let publicLocale = "en"
+      // In a production environment the siteContent would be retrieved from a remote source
+      sitedetailsProvider.setAgency(siteContent.agency, siteContent.supportedLocales)
       sitedetailsProvider.setTopNavItems(publicLocale, siteContent.topNavDisplayLinks)
+      sitedetailsProvider.setFooterNavItems(publicLocale, siteContent.topNavDisplayLinks)
     },
     setColorScheme(themeName) {
       let currentThemeVariables = themeVariables[themeName] || []
