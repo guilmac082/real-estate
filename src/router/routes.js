@@ -26,8 +26,41 @@ const routes = (ssrContext) => {
       path: '/',
       component: () => import(/* @vite-ignore */`/src/layouts/${themeFrameName}/MainLayout.vue`),
       children: [
-        { path: '', component: () => import('pages/LandingPage.vue') },
+        {
+          path: '',
+          name: 'rLanding',
+          component: () => import('pages/LandingPage.vue')
+        },
         // { path: 'landing', component: () => import('pages/LandingPage.vue') }
+        {
+          path: '/:publicLocale',
+          name: 'rLocaleHome',
+          // component: () => import('pages/LandingPage.vue'),
+          component: () => import("pages/EmptyContainer.vue"),
+          children: [
+            {
+              path: '',
+              name: 'rLocaleHomePage',
+              component: () => import('pages/LandingPage.vue')
+              // component: () => import('pages/llm/HomePage.vue')
+            },
+            // {
+            //   path: 'about-us',
+            //   name: 'rLocaleAboutUsPage',
+            //   component: () => import('pages/llm/AboutUsPage.vue')
+            // },
+            // {
+            //   path: 'contact-us',
+            //   name: 'rContactUs',
+            //   component: () => import('pages/llm/ContactUsPage.vue')
+            // },
+            // {
+            //   path: 'sell',
+            //   name: 'rSellPage',
+            //   component: () => import('pages/llm/SellPage.vue')
+            // },
+          ]
+        }
       ]
     },
 
