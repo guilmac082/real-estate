@@ -6,14 +6,25 @@
 import { defineComponent } from "vue"
 import { colors, setCssVar } from "quasar"
 import { themeVariables } from "src/compose/data/theme-variables"
+import { sitedetailsProvider } from "src/compose/sitedetails-provider.js"
+import { siteContent } from "src/compose/data/site-content"
 
 export default defineComponent({
   name: "App",
   mounted() {
     let themeName = process.env.THEME_NAME || "florida"
     this.setColorScheme(themeName)
+    this.setupSiteData()
+  },
+  provide: {
+    // localiseProvider,
+    sitedetailsProvider,
   },
   methods: {
+    setupSiteData() {
+      let publicLocale = "en"
+      sitedetailsProvider.setTopNavItems(publicLocale, siteContent.topNavDisplayLinks)
+    },
     setColorScheme(themeName) {
       let currentThemeVariables = themeVariables[themeName] || []
       currentThemeVariables.forEach((tVar) => {

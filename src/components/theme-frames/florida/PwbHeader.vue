@@ -99,10 +99,10 @@
 </template>
 <script>
 import { defineComponent, ref } from "vue"
-import { siteContent } from "src/compose/data/site-content"
+// import { siteContent } from "src/compose/data/site-content"
 export default defineComponent({
   name: "PwbHeader",
-  // inject: ["sitedetailsProvider"],
+  inject: ["sitedetailsProvider"],
   mounted() {},
   data() {
     return {}
@@ -134,8 +134,7 @@ export default defineComponent({
       return langNavs
     },
     topNavLinks() {
-      // debugger
-      return siteContent.topNavDisplayLinks // this.sitedetailsProvider.state.topNavLinkItems
+      return this.sitedetailsProvider.state.topNavLinkItems
     },
   },
 })
