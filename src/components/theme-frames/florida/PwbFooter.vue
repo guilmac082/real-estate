@@ -29,7 +29,7 @@
         <div :class="copywriteClass">
           Copyright © 2021 - 2022
           <a class="" href="/" style="text-decoration: none; color: inherit">
-            {{ sitedetailsProvider.state.agency.displayName }}
+            {{ agencyStore.agency.displayName }}
           </a>
         </div>
       </div>
@@ -38,9 +38,14 @@
 </template>
 <script>
 import { defineComponent, ref } from "vue"
+import { useAgencyStore } from "stores/agency"
 export default defineComponent({
   name: "PwbFooter",
   inject: ["sitedetailsProvider"],
+  setup() {
+    const agencyStore = useAgencyStore()
+    return { agencyStore }
+  },
   mounted() {
     setTimeout(() => {
       // footer sometimes loading before rest of page

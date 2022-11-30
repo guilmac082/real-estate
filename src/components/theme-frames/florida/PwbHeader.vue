@@ -57,7 +57,7 @@
       <q-toolbar-title class="q-pl-sm">
         <a href="/" style="color: inherit">
           <div class="q-px-sm" style="width: fit-content; border: 1px solid">
-            {{ sitedetailsProvider.state.agency.displayName }}
+            {{ agencyStore.agency.displayName }}
           </div>
         </a>
         <!-- <strong></strong> -->
@@ -101,12 +101,14 @@
 import { defineComponent, ref } from "vue"
 // import { siteContent } from "src/compose/data/site-content"
 import { useAgencyStore } from "stores/agency"
+import { useWebSiteStore } from "stores/web-site"
 export default defineComponent({
   name: "PwbHeader",
   inject: ["sitedetailsProvider"],
   setup() {
     const agencyStore = useAgencyStore()
-    return { agencyStore }
+    const webSiteStore = useWebSiteStore()
+    return { agencyStore, webSiteStore }
   },
   data() {
     return {}
@@ -138,7 +140,7 @@ export default defineComponent({
       return langNavs
     },
     topNavLinks() {
-      return this.sitedetailsProvider.state.topNavLinkItems
+      return this.webSiteStore.topNavLinkItems // this.sitedetailsProvider.state.topNavLinkItems
     },
   },
 })

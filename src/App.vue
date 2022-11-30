@@ -9,12 +9,15 @@ import { themeVariables } from "src/compose/data/theme-variables"
 import { sitedetailsProvider } from "src/compose/sitedetails-provider.js"
 import { siteContent } from "src/compose/data/site-content"
 import { useAgencyStore } from "stores/agency"
+import { useWebSiteStore } from "stores/web-site"
 
 export default defineComponent({
   name: "App",
   setup() {
     const agencyStore = useAgencyStore()
     agencyStore.setAgency(siteContent.agency)
+    const webSiteStore = useWebSiteStore()
+    webSiteStore.setTopNav("en", siteContent.topNavDisplayLinks)
     // return { agencyStore }
   },
   mounted() {
