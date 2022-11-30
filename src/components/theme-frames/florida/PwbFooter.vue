@@ -1,5 +1,5 @@
 <template>
-  <q-footer v-if="timeToShowFooter" :style="mainFooterStyle" elevated class="">
+  <q-footer v-if="timeToShowFooter" elevated class="">
     <div class="pwb-footer-sec-1" style="">
       <q-toolbar>
         <div class="width-full text-center q-pa-md text-body1">
@@ -65,14 +65,14 @@ export default defineComponent({
   },
   props: {},
   computed: {
-    mainFooterStyle() {
-      return (
-        "position: relative;background-color:" +
-        this.thm.colors.iconsColor +
-        ";color:" +
-        this.thm.colors.headerColorContrast
-      )
-    },
+    // mainFooterStyle() {
+    //   return (
+    //     "position: relative;background-color:" +
+    //     this.thm.colors.iconsColor +
+    //     ";color:" +
+    //     this.thm.colors.headerColorContrast
+    //   )
+    // },
     footerNavLinks() {
       return [] // this.sitedetailsProvider.state.footerNavLinkItems
     },

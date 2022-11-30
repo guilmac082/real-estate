@@ -1,5 +1,5 @@
 <template>
-  <q-footer :style="mainFooterStyle" elevated class="">
+  <q-footer elevated class="">
     <div class="row bg-black text-white q-pt-lg">
       <div class="col-md-1 col-lg-1 col-sm-12 col-xs-12"></div>
       <div class="q-px-xl col-md-5 col-lg-5 col-sm-12 col-xs-12">
@@ -45,7 +45,7 @@
             <q-radio
               dense
               keep-color
-              v-model="type"
+              v-model="interestedInType"
               color="white"
               size="xs"
               val="Properties"
@@ -54,7 +54,7 @@
             <q-radio
               dense
               keep-color
-              v-model="type"
+              v-model="interestedInType"
               color="white"
               size="xs"
               val="Collaborations"
@@ -63,7 +63,7 @@
           </div>
         </div>
         <p class="q-py-xs">
-          <q-checkbox dense keep-color class="q-mr-sm" v-model="accept" color="white" />
+          <q-checkbox dense keep-color class="q-mr-sm" v-model="acceptPP" color="white" />
           I accept the Privacy policy
         </p>
         <p>
@@ -95,6 +95,8 @@ export default defineComponent({
   },
   data() {
     return {
+      interestedInType: "Properties",
+      acceptPP: true,
       // timeToShowFooter: true,
       thm: {
         colors: {},
