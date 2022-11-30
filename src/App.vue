@@ -8,9 +8,15 @@ import { colors, setCssVar } from "quasar"
 import { themeVariables } from "src/compose/data/theme-variables"
 import { sitedetailsProvider } from "src/compose/sitedetails-provider.js"
 import { siteContent } from "src/compose/data/site-content"
+import { useAgencyStore } from "stores/agency"
 
 export default defineComponent({
   name: "App",
+  setup() {
+    const agencyStore = useAgencyStore()
+    agencyStore.setAgency(siteContent.agency)
+    // return { agencyStore }
+  },
   mounted() {
     let themeName = process.env.THEME_NAME || "florida"
     this.setColorScheme(themeName)

@@ -9,13 +9,13 @@
                 <div class="aa-telephone-no float-left q-pl-sm">
                   <q-icon class="q-pb-xs q-pr-xs" name="phone" />
                   <div class="q-pt-xs" style="display: inline-flex">
-                    {{ sitedetailsProvider.state.agency.phoneNumberPrimary }}
+                    {{ agencyStore.agency.phoneNumberPrimary }}
                   </div>
                 </div>
                 <div class="aa-email mobile-hide float-left">
                   <q-icon class="q-pb-xs q-pr-xs q-pl-md" name="email" />
                   <div class="q-pt-xs" style="display: inline-flex">
-                    {{ sitedetailsProvider.state.agency.emailPrimary }}
+                    {{ agencyStore.agency.emailPrimary }}
                   </div>
                 </div>
               </div>
@@ -100,10 +100,14 @@
 <script>
 import { defineComponent, ref } from "vue"
 // import { siteContent } from "src/compose/data/site-content"
+import { useAgencyStore } from "stores/agency"
 export default defineComponent({
   name: "PwbHeader",
   inject: ["sitedetailsProvider"],
-  mounted() {},
+  setup() {
+    const agencyStore = useAgencyStore()
+    return { agencyStore }
+  },
   data() {
     return {}
   },
