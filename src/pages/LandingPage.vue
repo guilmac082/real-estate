@@ -757,7 +757,7 @@ export default defineComponent({
     subHeaderFrame() {
       const frameComponent = defineAsyncComponent(() =>
         import(
-          /* @vite-ignore */ `/src/components/theme-frames/${this.themeForFrames}/PwbSubHeader.vue`
+          /* @vite-ignore */ `../components/theme-frames/${this.themeForFrames}/PwbSubHeader.vue`
         )
       )
       return {

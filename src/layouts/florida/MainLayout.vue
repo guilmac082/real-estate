@@ -24,7 +24,7 @@ export default defineComponent({
     headerFrame() {
       const frameComponent = defineAsyncComponent(() =>
         import(
-          /* @vite-ignore */ `/src/components/theme-frames/${this.themeForFrames}/PwbHeader.vue`
+          /* @vite-ignore */ `../../components/theme-frames/${this.themeForFrames}/PwbHeader.vue`
         )
       )
       return {
@@ -35,7 +35,7 @@ export default defineComponent({
     footerFrame() {
       const frameComponent = defineAsyncComponent(() =>
         import(
-          /* @vite-ignore */ `/src/components/theme-frames/${this.themeForFrames}/PwbFooter.vue`
+          /* @vite-ignore */ `../../components/theme-frames/${this.themeForFrames}/PwbFooter.vue`
         )
       )
       return {

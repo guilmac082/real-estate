@@ -9,7 +9,7 @@ const routes = (themeFrameName) => {
   return [
     {
       path: '/',
-      component: () => import(/* @vite-ignore */`/src/layouts/${themeFrameName}/MainLayout.vue`),
+      component: () => import(/* @vite-ignore */`../layouts/${themeFrameName}/MainLayout.vue`),
       children: [
         {
           path: '',
