@@ -1,5 +1,5 @@
 # https://cloud.google.com/apigee/docs/api-platform/local-development/overview
-service: quasar-real-estate-ssr
+service: pwb-florida-dec-3
 runtime: nodejs16
 env: standard
 instance_class: F1
