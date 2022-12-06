@@ -40,6 +40,11 @@ const routes = (themeFrameName) => {
               name: 'rForSaleSearch',
               component: () => import(`../pages/${themeFrameName}/SearchView.vue`)
             },
+            {
+              path: 'for-sale/:listingSlug',
+              name: 'rForSaleListing',
+              component: () => import("pages/EmptyContainer.vue"),
+            },
             // {
             //   path: 'about-us',
             //   name: 'rLocaleAboutUsPage',

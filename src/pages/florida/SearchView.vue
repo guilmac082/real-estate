@@ -23,10 +23,10 @@
               v-for="property in properties"
               :key="property.id"
             >
-              <!-- <ListingsSummaryCard
+              <ListingsSummaryCard
                 :saleOrRental="saleOrRental"
                 :currentListing="property"
-              ></ListingsSummaryCard> -->
+              ></ListingsSummaryCard>
             </div>
           </div>
         </div>
@@ -38,8 +38,10 @@
 <script>
 import { defineComponent, ref, computed } from "vue"
 // import { useQuery } from "@urql/vue"
-// import { useRouter, useRoute } from "vue-router"
+import { useRouter, useRoute } from "vue-router"
+import { propertyListingsEn } from "src/compose/data/property-listings-en"
 import VerticalSearchForm from "components/widgets/VerticalSearchForm.vue"
+import ListingsSummaryCard from "components/listings/ListingsSummaryCard.vue"
 export default defineComponent({
   name: "SearchView",
   props: {
@@ -52,6 +54,7 @@ export default defineComponent({
   },
   components: {
     VerticalSearchForm,
+    ListingsSummaryCard,
   },
   methods: {
     triggerSearchUpdate(fieldDetails) {
@@ -60,7 +63,15 @@ export default defineComponent({
   },
   computed: {
     properties() {
-      const properties = [] // this.data ? this.data.searchProperties : []
+      // const route = useRoute()
+      // // let pageSlug = "rent"
+      // let saleOrRental = "rental"
+      // if (route.name === "rForSaleSearch") {
+      //   // pageSlug = "buy"
+      //   saleOrRental = "sale"
+      // }
+      // debugger
+      const properties = propertyListingsEn || [] // this.data ? this.data.searchProperties : []
       return properties
     },
     pageContents() {
@@ -92,7 +103,13 @@ export default defineComponent({
     }
   },
   setup() {
-    // const route = useRoute()
+    const route = useRoute()
+    // let pageSlug = "rent"
+    let saleOrRental = "rental"
+    if (route.name === "rForSaleSearch") {
+      // pageSlug = "buy"
+      saleOrRental = "sale"
+    }
     // const pageSlug = "search-view"
     // const publicLocale = ref(route.params.publicLocale || "en")
     // const result = useQuery({
@@ -117,6 +134,7 @@ export default defineComponent({
     //   `,
     // })
     return {
+      saleOrRental,
       // getPageFrameComponent,
       // publicLocale,
       // gqlFetching: result.fetching,
