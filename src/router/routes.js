@@ -43,7 +43,7 @@ const routes = (themeFrameName) => {
             {
               path: 'for-sale/:listingSlug',
               name: 'rForSaleListing',
-              component: () => import("pages/EmptyContainer.vue"),
+              component: () => import(`../pages/${themeFrameName}/ListingView.vue`)
             },
             // {
             //   path: 'about-us',
