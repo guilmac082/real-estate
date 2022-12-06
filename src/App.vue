@@ -3,23 +3,28 @@
 </template>
 
 <script>
-import { defineComponent } from "vue"
+import { defineComponent, ref } from "vue"
+import { useRouter, useRoute } from "vue-router"
 import { colors, setCssVar } from "quasar"
 import { themeVariables } from "src/compose/data/theme-variables"
-import { sitedetailsProvider } from "src/compose/sitedetails-provider.js"
+// import { sitedetailsProvider } from "src/compose/sitedetails-provider.js"
 import { localiseProvider } from "src/compose/localise-provider.js"
 import { siteContent } from "src/compose/data/site-content"
 import { siteTranslationsEn } from "src/compose/data/site-translations-en"
+import { siteTranslationsEs } from "src/compose/data/site-translations-es"
 import { useAgencyStore } from "stores/agency"
 import { useWebSiteStore } from "stores/web-site"
 
 export default defineComponent({
   name: "App",
   setup() {
-    localiseProvider.setLocaleMessages(
-      siteTranslationsEn.result,
-      siteTranslationsEn.locale
-    )
+    const route = useRoute()
+    const publicLocale = ref(route.params.publicLocale || "en")
+    let siteTranslations = siteTranslationsEn
+    if (publicLocale.value === "es") {
+      siteTranslations = siteTranslationsEs
+    }
+    localiseProvider.setLocaleMessages(siteTranslations.result, siteTranslations.locale)
     const agencyStore = useAgencyStore()
     agencyStore.setAgency(siteContent.agency)
     const webSiteStore = useWebSiteStore()
@@ -33,15 +38,14 @@ export default defineComponent({
   },
   provide: {
     localiseProvider,
-    sitedetailsProvider,
+    // sitedetailsProvider,
   },
   methods: {
     setupSiteData() {
-      let publicLocale = "en"
-      // In a production environment the siteContent would be retrieved from a remote source
-      sitedetailsProvider.setAgency(siteContent.agency, siteContent.supportedLocales)
-      sitedetailsProvider.setTopNavItems(publicLocale, siteContent.topNavDisplayLinks)
-      sitedetailsProvider.setFooterNavItems(publicLocale, siteContent.topNavDisplayLinks)
+      // let publicLocale = "en"
+      // sitedetailsProvider.setAgency(siteContent.agency, siteContent.supportedLocales)
+      // sitedetailsProvider.setTopNavItems(publicLocale, siteContent.topNavDisplayLinks)
+      // sitedetailsProvider.setFooterNavItems(publicLocale, siteContent.topNavDisplayLinks)
     },
     setColorScheme(themeName) {
       let currentThemeVariables = themeVariables[themeName] || []
