@@ -38,12 +38,12 @@
             />
           </div>
           <q-separator />
-          <p class="q-py-xs q-mt-lg flex flex-center">
+          <div class="q-py-xs q-mt-lg flex flex-center">
             <q-icon size="sm" class="q-mr-sm" name="school" /> ACADEMY
-          </p>
-          <p class="q-py-xs flex flex-center">
+          </div>
+          <div class="q-py-xs flex flex-center">
             <q-icon size="sm" class="q-mr-sm" name="logout" /> AGENTS
-          </p>
+          </div>
         </q-list>
       </q-scroll-area>
     </q-drawer>
@@ -462,7 +462,7 @@
                 ></q-input>
               </div>
             </div>
-            <p class="q-py-sm">
+            <div class="q-py-sm">
               <q-checkbox
                 dense
                 keep-color
@@ -471,8 +471,8 @@
                 color="white"
               />
               I accept the Privacy policy
-            </p>
-            <p>
+            </div>
+            <div>
               <q-btn
                 size="17px"
                 class="text-capitalize"
@@ -481,7 +481,7 @@
                 color="white"
                 label="Send"
               />
-            </p>
+            </div>
           </div>
         </div>
         <div class="bottom_triangle"></div>

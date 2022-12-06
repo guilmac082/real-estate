@@ -21,7 +21,7 @@
       </div>
       <div class="q-px-xl q-pt-lg col-md-4 col-lg-4 col-sm-12 col-xs-12">
         <div class="text-h6 q-mb-md">Newsletter</div>
-        <p>
+        <div>
           <q-input
             outlined
             bg-color="white"
@@ -29,8 +29,8 @@
             dense
             label="All Cities"
           ></q-input>
-        </p>
-        <p>
+        </div>
+        <div>
           <q-input
             outlined
             bg-color="white"
@@ -38,7 +38,7 @@
             dense
             label="All Cities"
           ></q-input>
-        </p>
+        </div>
         <div class="row">
           <div class="col-4">Interested in: *</div>
           <div class="col-2">
@@ -62,11 +62,11 @@
             />
           </div>
         </div>
-        <p class="q-py-xs">
+        <div class="q-py-xs">
           <q-checkbox dense keep-color class="q-mr-sm" v-model="acceptPP" color="white" />
           I accept the Privacy policy
-        </p>
-        <p>
+        </div>
+        <div>
           <q-btn
             class="text-capitalize"
             outline
@@ -74,7 +74,7 @@
             color="white"
             label="Subscribe"
           />
-        </p>
+        </div>
       </div>
     </div>
   </q-footer>
