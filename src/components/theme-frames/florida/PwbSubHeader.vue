@@ -8,11 +8,12 @@
       <div class="row q-my-xl q-py-none">
         <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12">
           <h3 style="margin-top: 10px" class="text-center text-white text-h3 q-my-md">
-            <q-img
+            PWB
+            <!-- <q-img
               :src="subHeaderLogoUrl"
               style="max-width: 80px; height: 55px; margin-bottom: 10px"
             >
-            </q-img>
+            </q-img> -->
             {{ subHeaderMainText }} <br />
           </h3>
           <div v-if="contentConfig.searchBar">
@@ -28,7 +29,7 @@
   <div :style="`height:${subHeaderHeight}`" v-else></div>
 </template>
 <script>
-import subHeaderLogoUrl from "assets/images/llm/logo-180x180-bg-black.jpeg"
+// import subHeaderLogoUrl from "assets/images/llm/logo-180x180-bg-black.jpeg"
 import defBgImgUrl from "assets/1.jpg"
 // import defBgImgUrl from "assets/images/llm/terrace-with-sea-and-greenry-wide.jpeg"
 // import HeroSearchForm from "components/llm/HeroSearchForm.vue"
@@ -36,7 +37,7 @@ import { defineComponent, ref } from "vue"
 export default defineComponent({
   name: "PwbSubHeader",
   created() {
-    this.subHeaderLogoUrl = subHeaderLogoUrl
+    // this.subHeaderLogoUrl = subHeaderLogoUrl
     this.defBgImgUrl = defBgImgUrl
   },
   components: {

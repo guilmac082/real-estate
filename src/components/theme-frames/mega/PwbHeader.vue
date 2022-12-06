@@ -10,7 +10,8 @@
     style="height: 90px; z-index: 2"
   >
     <q-toolbar-title :class="$q.platform.is.mobile ? 'text-center' : ''">
-      <q-img class="q-ma-lg q-ml-xl" style="width: 140px" :src="subHeaderLogoUrl" />
+      PWB
+      <!-- <q-img class="q-ma-lg q-ml-xl" style="width: 140px" :src="subHeaderLogoUrl" /> -->
     </q-toolbar-title>
     <div>
       <q-btn
@@ -40,7 +41,7 @@
 </template>
 <script>
 import { defineComponent, ref } from "vue"
-import subHeaderLogoUrl from "assets/images/llm/logo-180x180-bg-black.jpeg"
+// import subHeaderLogoUrl from "assets/images/llm/logo-180x180-bg-black.jpeg"
 export default defineComponent({
   name: "PwbHeader",
   // inject: ["sitedetailsProvider"],
@@ -61,7 +62,7 @@ export default defineComponent({
     }
   },
   created() {
-    this.subHeaderLogoUrl = subHeaderLogoUrl
+    // // this.subHeaderLogoUrl = subHeaderLogoUrl
   },
   data() {
     return {}
