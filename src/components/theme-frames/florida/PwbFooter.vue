@@ -41,7 +41,7 @@ import { defineComponent, ref } from "vue"
 import { useAgencyStore } from "stores/agency"
 export default defineComponent({
   name: "PwbFooter",
-  inject: ["sitedetailsProvider"],
+  // inject: ["sitedetailsProvider"],
   setup() {
     const agencyStore = useAgencyStore()
     return { agencyStore }

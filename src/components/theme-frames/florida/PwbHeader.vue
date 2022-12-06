@@ -104,7 +104,7 @@ import { useAgencyStore } from "stores/agency"
 import { useWebSiteStore } from "stores/web-site"
 export default defineComponent({
   name: "PwbHeader",
-  inject: ["sitedetailsProvider"],
+  // inject: ["sitedetailsProvider"],
   setup() {
     const agencyStore = useAgencyStore()
     const webSiteStore = useWebSiteStore()
