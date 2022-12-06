@@ -9,6 +9,7 @@
       bg-color="white"
       :options="selectItems"
       v-model="localFieldValue"
+      :label="localiseProvider.$ft(fieldDetails.labelTextTKey)"
       @update:model-value="fieldChangeHandler"
       option-label="name"
       option-value="value"
@@ -19,7 +20,7 @@
 <script>
 // import _ from "lodash"
 export default {
-  // inject: ["localiseProvider"],
+  inject: ["localiseProvider"],
   props: {
     currentFieldValue: {
       type: String,

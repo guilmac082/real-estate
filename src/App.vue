@@ -7,13 +7,19 @@ import { defineComponent } from "vue"
 import { colors, setCssVar } from "quasar"
 import { themeVariables } from "src/compose/data/theme-variables"
 import { sitedetailsProvider } from "src/compose/sitedetails-provider.js"
+import { localiseProvider } from "src/compose/localise-provider.js"
 import { siteContent } from "src/compose/data/site-content"
+import { siteTranslationsEn } from "src/compose/data/site-translations-en"
 import { useAgencyStore } from "stores/agency"
 import { useWebSiteStore } from "stores/web-site"
 
 export default defineComponent({
   name: "App",
   setup() {
+    localiseProvider.setLocaleMessages(
+      siteTranslationsEn.result,
+      siteTranslationsEn.locale
+    )
     const agencyStore = useAgencyStore()
     agencyStore.setAgency(siteContent.agency)
     const webSiteStore = useWebSiteStore()
@@ -26,7 +32,7 @@ export default defineComponent({
     this.setupSiteData()
   },
   provide: {
-    // localiseProvider,
+    localiseProvider,
     sitedetailsProvider,
   },
   methods: {
