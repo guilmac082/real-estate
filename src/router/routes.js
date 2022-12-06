@@ -35,11 +35,11 @@ const routes = (themeFrameName) => {
               component: () => import(`../pages/${themeFrameName}/AboutUsPage.vue`)
               // component: () => import('pages/llm/AboutUsPage.vue')
             },
-            // {
-            //   path: 'for-sale',
-            //   name: 'rForSaleSearch',
-            //   component: () => import(`../pages/${themeFrameName}/SearchView.vue`)
-            // },
+            {
+              path: 'for-sale',
+              name: 'rForSaleSearch',
+              component: () => import(`../pages/${themeFrameName}/SearchView.vue`)
+            },
             // {
             //   path: 'about-us',
             //   name: 'rLocaleAboutUsPage',
