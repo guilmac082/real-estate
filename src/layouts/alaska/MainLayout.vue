@@ -15,7 +15,7 @@ export default defineComponent({
   name: "MainLayout",
   data() {
     return {
-      themeForFrames: "mega",
+      themeForFrames: "alaska",
     }
   },
   components: {},

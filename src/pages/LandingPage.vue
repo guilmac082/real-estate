@@ -732,14 +732,13 @@ export default defineComponent({
   // components: { PwbSubHeader },
   data() {
     return {
-      // themeForFrames: "mega",
       // themeForFrames: "florida",
     }
   },
   props: {
     themeForFrames: {
       type: String,
-      default: "mega",
+      default: "alaska",
     },
   },
   mounted() {
@@ -748,7 +747,7 @@ export default defineComponent({
     // if (!process.env.SERVER) {
     //   const reqQuery = new URL(document.location).searchParams
     //   const queryThemeName = reqQuery.get("theme")
-    //   if (queryThemeName && ["mega", "florida"].includes(queryThemeName)) {
+    //   if (queryThemeName && ["alaska", "florida"].includes(queryThemeName)) {
     //     this.themeForFrames = queryThemeName
     //   }
     // }
