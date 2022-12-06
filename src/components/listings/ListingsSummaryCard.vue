@@ -18,22 +18,22 @@
       </q-card-section>
 
       <q-separator />
-      <router-link style="text-decoration: none" :to="currentListingRoute">
-        <div class="q-pa-md">
-          <q-item-section>
-            <router-link style="text-decoration: none" :to="currentListingRoute">
-              <q-item-label>{{ currentListing.title }}</q-item-label>
-              <q-item-label caption>
-                <ConvertableCurrencyDisplay
-                  :priceInCents="priceInCents"
-                  :originalCurrency="currentListing.currency || 'GBP'"
-                >
-                </ConvertableCurrencyDisplay>
-              </q-item-label>
-            </router-link>
-          </q-item-section>
-        </div>
-        <q-card-actions class="w-full">
+      <div class="q-pa-md">
+        <q-item-section>
+          <router-link style="text-decoration: none" :to="currentListingRoute">
+            <q-item-label>{{ currentListing.title }}</q-item-label>
+            <q-item-label caption>
+              <ConvertableCurrencyDisplay
+                :priceInCents="priceInCents"
+                :originalCurrency="currentListing.currency || 'GBP'"
+              >
+              </ConvertableCurrencyDisplay>
+            </q-item-label>
+          </router-link>
+        </q-item-section>
+      </div>
+      <q-card-actions class="w-full">
+        <router-link style="text-decoration: none" :to="currentListingRoute">
           <div>
             <div class="q-pa-md row no-wrap items-center justify-around">
               <div class="flex-1 inline-flex items-center q-pr-sm">
@@ -77,8 +77,8 @@
               </div>
             </div>
           </div>
-        </q-card-actions>
-      </router-link>
+        </router-link>
+      </q-card-actions>
     </q-card>
   </div>
 </template>
