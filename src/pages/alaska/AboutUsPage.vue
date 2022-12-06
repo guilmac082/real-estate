@@ -1,15 +1,16 @@
 <template>
   <div class="about-us-ctr">
     <div class="q-my-md"></div>
+    <WhatWeDo></WhatWeDo>
   </div>
 </template>
 <script>
 import { defineComponent, ref, computed } from "vue"
 // import { useQuery } from "@urql/vue"
 // import { useRouter, useRoute } from "vue-router"
-// import BestInClass from "components/llm/BestInClass.vue"
-// import WhatWeDo from "components/llm/WhatWeDo.vue"
-// import SixOfferings from "components/llm/SixOfferings.vue"
+// import BestInClass from "components/content-sections/BestInClass.vue"
+import WhatWeDo from "components/content-sections/WhatWeDo.vue"
+// import SixOfferings from "components/content-sections/SixOfferings.vue"
 export default defineComponent({
   name: "AboutUsPage",
   props: {
@@ -24,7 +25,7 @@ export default defineComponent({
     // OurServices,
     // ThreeServicesBold,
     // BestInClass,
-    // WhatWeDo,
+    WhatWeDo,
     // SixOfferings,
   },
   computed: {
