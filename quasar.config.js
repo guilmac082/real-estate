@@ -10,9 +10,21 @@
 
 
 const { configure } = require('quasar/wrappers');
-const dotenv = require('dotenv');
-// Just declaring dotenvConfig below is enough to enable using of dotenv variables
-const dotenvConfig = dotenv.config().parsed;
+// const dotenv = require('dotenv');
+// const dotenvConfig = dotenv.config().parsed;
+// Dec 2022: Had been loading dotenv as above but that was not
+// feeding through to the build
+
+// below from https://quasar.dev/quasar-cli-vite/handling-process-env
+// This will load from `.env` if it exists, but not override existing `process.env.*` values
+require('dotenv').config()
+// process.env now contains the terminal variables and the ones from the .env file
+// Precedence:
+//   1. Terminal variables (API_URL=https://api.com quasar build)
+//   2. `.env` file
+// If you want .env file to override the terminal variables,
+// use `require('dotenv').config({ override: true })` instead
+
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -76,6 +88,7 @@ module.exports = configure(function (/* ctx */) {
       env: {
         // GOOGLE_FONT_NAME: process.env.GOOGLE_FONT_NAME,
         THEME_NAME: process.env.THEME_NAME,
+        UPLOADS_BASE_URL: process.env.UPLOADS_BASE_URL,
       },
       // rawDefine: {}
       // ignorePublicFolder: true,
