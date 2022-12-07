@@ -86,7 +86,7 @@ module.exports = configure(function (/* ctx */) {
       // analyze: true,
       // env: {},
       env: {
-        // GOOGLE_FONT_NAME: process.env.GOOGLE_FONT_NAME,
+        GOOGLE_FONT_NAME: process.env.GOOGLE_FONT_NAME,
         THEME_NAME: process.env.THEME_NAME,
         UPLOADS_BASE_URL: process.env.UPLOADS_BASE_URL,
       },
