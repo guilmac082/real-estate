@@ -55,5 +55,22 @@ export default defineComponent({
       // setCssVar("pwb-primary", "blue")
     },
   },
+  computed: {
+    appFont() {
+      let googleFont = process.env.GOOGLE_FONT_NAME
+      return `'${googleFont}', '-apple-system', 'Helvetica Neue', Helvetica, Arial, sans-serif !default`
+    },
+  },
 })
 </script>
+<style>
+html,
+body,
+.v-pub-app {
+  /* font-family: ""; */
+  font-family: v-bind("appFont");
+  /* previously needed to have a root div element here for v-bind to work */
+  /* but that might have been because I'd previously used a replacement file for App.vue */
+  /* https://vuejs.org/api/sfc-css-features.html#v-bind-in-css */
+}
+</style>

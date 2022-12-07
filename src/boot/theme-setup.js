@@ -46,6 +46,8 @@ export default boot(async ({ app, router, ssrContext }) => {
   currentThemeVariables.forEach((tVar) => {
     setBrand(tVar['varName'], tVar['varValue'], ssrContext)
   })
+  // Thought I'd be able to change the default font used like so but that didn't work:
+  // setBrand('$typography-font-family', process.env.GOOGLE_FONT_NAME, ssrContext)
   // setBrand('primary', theme.color1, ssrContext)
 
 })
