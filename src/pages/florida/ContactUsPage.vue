@@ -1,45 +1,24 @@
 <template>
   <div class="contact-us-ctr">
-    <div v-if="subHeaderComponent" :class="subHeaderComponent.containerClasses">
-      <component :is="subHeaderComponent.name" subHeaderTitle="Contact Us"> </component>
-    </div>
-    <!-- <div v-if="thm.other.showSubHeader === 'yes'"
-         class="max-ctr-breakout">
-      <PwbSubHeader subHeaderTitle="Contact Us"
-                    subHeaderBgImgUrl="https://luxurylistingsmarbella.com/wp-content/uploads/2020/06/R3660428-3.jpg">
-      </PwbSubHeader>
-    </div> -->
     <!-- <TextHeroSimple v-if="thm.other.showSubHeader === 'yes'"
                     textMain="Contact Us"
                     textSec="We'll be happy to answer any questions you may have."
                     bgImgUrl="https://quasar-company-profile-template.netlify.app/statics/images/contact_us.jpg">
     </TextHeroSimple> -->
     <ContactSimpleSideBySide style="" class="q-pb-md q-mb-md"></ContactSimpleSideBySide>
-    <div v-if="heroFooterComponent" :class="heroFooterComponent.containerClasses">
-      <component
-        :is="heroFooterComponent.name"
-        :thm="thm"
-        :contentConfig="heroFooterComponent.contentConfig"
-        subHeaderTitle="The Finest Listing Agents On The Costa Del Sol"
-      ></component>
-    </div>
   </div>
 </template>
 <script>
 import { defineComponent, ref, computed } from "vue"
 // import { useQuery } from "@urql/vue"
-import { useRouter, useRoute } from "vue-router"
+// import { useRouter, useRoute } from "vue-router"
 // import TextHeroSimple from "components/llm/TextHeroSimple.vue"
 import ContactSimpleSideBySide from "components/forms/ContactSimpleSideBySide.vue"
-// import PwbSubHeader from "components/llm/PwbSubHeader.vue"
-// import HeroFooterAlpha from "components/llm/sections/HeroFooterAlpha.vue"
 export default defineComponent({
   name: "ContactUsPage",
   components: {
     // TextHeroSimple,
     ContactSimpleSideBySide,
-    // PwbSubHeader,
-    // HeroFooterAlpha,
   },
   props: {
     // thm: {
@@ -48,37 +27,12 @@ export default defineComponent({
     //     return {
     //       colors: {
     //         iconsColor: "#3A6B35",
-    //         bordersColor: "#3A6B35",
-    //         pwbPrimary: "#3A6B35",
-    //         pwbPrimaryContrast: "white",
-    //         headerColor: "#3A6B35",
-    //         headerColorContrast: "white",
-    //         footerColor: "#3A6B35",
-    //         footerColorContrast: "white",
     //       },
     //     }
     //   },
     // },
   },
   computed: {
-    heroFooterComponent() {
-      return false
-      // const thmFrames = this.thm.frames || {}
-      // if (thmFrames.homePage && thmFrames.homePage.heroFooter) {
-      //   return thmFrames.homePage.heroFooter
-      // } else {
-      //   return false
-      // }
-    },
-    subHeaderComponent() {
-      return false
-      // const thmFrames = this.thm.frames || {}
-      // if (thmFrames.contactUsPage && thmFrames.contactUsPage.subHeader) {
-      //   return thmFrames.contactUsPage.subHeader
-      // } else {
-      //   return false
-      // }
-    },
     pageContents() {
       const pageContents = []
       // if (this.gqlError) {

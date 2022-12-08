@@ -24,10 +24,10 @@
             </div>
           </div>
         </div>
-        <figure class="pic-1"></figure>
-        <figure class="pic-2"></figure>
-        <figure class="pic-3"></figure>
-        <figure class="pic-4"></figure>
+        <figure style="margin: 0px" class="pic-1"></figure>
+        <figure style="margin: 0px" class="pic-2"></figure>
+        <figure style="margin: 0px" class="pic-3"></figure>
+        <figure style="margin: 0px" class="pic-4"></figure>
       </div>
     </div>
   </div>
