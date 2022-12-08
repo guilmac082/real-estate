@@ -45,16 +45,17 @@ const routes = (themeFrameName) => {
               name: 'rForSaleListing',
               component: () => import(`../pages/${themeFrameName}/ListingView.vue`)
             },
-            // {
-            //   path: 'about-us',
-            //   name: 'rLocaleAboutUsPage',
-            //   component: () => import('pages/llm/AboutUsPage.vue')
-            // },
-            // {
-            //   path: 'contact-us',
-            //   name: 'rContactUs',
-            //   component: () => import('pages/llm/ContactUsPage.vue')
-            // },
+            {
+              path: 'contact-us',
+              name: 'rContactUs',
+              component: () => import(`../pages/${themeFrameName}/ContactUsPage.vue`)
+              // component: () => import('pages/llm/ContactUsPage.vue')
+            },
+            {
+              path: 'p/:pageSlug',
+              name: 'rPublicPage',
+              component: () => import('pages/PageContainer.vue')
+            },
             // {
             //   path: 'sell',
             //   name: 'rSellPage',
