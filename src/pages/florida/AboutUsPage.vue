@@ -2,6 +2,9 @@
   <div class="about-us-ctr">
     <div class="q-my-md"></div>
     <WhatWeDo></WhatWeDo>
+    <div style="margin-bottom: 90px" class="hero-footer-ctr">
+      <HeroFooter></HeroFooter>
+    </div>
   </div>
 </template>
 <script>
@@ -11,6 +14,7 @@ import { defineComponent, ref, computed } from "vue"
 // import BestInClass from "components/content-sections/BestInClass.vue"
 import WhatWeDo from "components/content-sections/WhatWeDo.vue"
 // import SixOfferings from "components/content-sections/SixOfferings.vue"
+import HeroFooter from "components/theme-frames/florida/HeroFooter.vue"
 export default defineComponent({
   name: "AboutUsPage",
   props: {
@@ -26,6 +30,7 @@ export default defineComponent({
     // ThreeServicesBold,
     // BestInClass,
     WhatWeDo,
+    HeroFooter,
     // SixOfferings,
   },
   computed: {
