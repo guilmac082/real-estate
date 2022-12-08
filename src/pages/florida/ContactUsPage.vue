@@ -14,11 +14,7 @@
                     textSec="We'll be happy to answer any questions you may have."
                     bgImgUrl="https://quasar-company-profile-template.netlify.app/statics/images/contact_us.jpg">
     </TextHeroSimple> -->
-    <ContactSimpleSideBySide
-      style=""
-      class="q-pb-md q-mb-md"
-      :thm="thm"
-    ></ContactSimpleSideBySide>
+    <ContactSimpleSideBySide style="" class="q-pb-md q-mb-md"></ContactSimpleSideBySide>
     <div v-if="heroFooterComponent" :class="heroFooterComponent.containerClasses">
       <component
         :is="heroFooterComponent.name"
@@ -46,33 +42,42 @@ export default defineComponent({
     // HeroFooterAlpha,
   },
   props: {
-    thm: {
-      type: Object,
-      default() {
-        return {
-          colors: {},
-        }
-      },
-    },
+    // thm: {
+    //   type: Object,
+    //   default() {
+    //     return {
+    //       colors: {
+    //         iconsColor: "#3A6B35",
+    //         bordersColor: "#3A6B35",
+    //         pwbPrimary: "#3A6B35",
+    //         pwbPrimaryContrast: "white",
+    //         headerColor: "#3A6B35",
+    //         headerColorContrast: "white",
+    //         footerColor: "#3A6B35",
+    //         footerColorContrast: "white",
+    //       },
+    //     }
+    //   },
+    // },
   },
   computed: {
     heroFooterComponent() {
       return false
-      const thmFrames = this.thm.frames || {}
-      if (thmFrames.homePage && thmFrames.homePage.heroFooter) {
-        return thmFrames.homePage.heroFooter
-      } else {
-        return false
-      }
+      // const thmFrames = this.thm.frames || {}
+      // if (thmFrames.homePage && thmFrames.homePage.heroFooter) {
+      //   return thmFrames.homePage.heroFooter
+      // } else {
+      //   return false
+      // }
     },
     subHeaderComponent() {
       return false
-      const thmFrames = this.thm.frames || {}
-      if (thmFrames.contactUsPage && thmFrames.contactUsPage.subHeader) {
-        return thmFrames.contactUsPage.subHeader
-      } else {
-        return false
-      }
+      // const thmFrames = this.thm.frames || {}
+      // if (thmFrames.contactUsPage && thmFrames.contactUsPage.subHeader) {
+      //   return thmFrames.contactUsPage.subHeader
+      // } else {
+      //   return false
+      // }
     },
     pageContents() {
       const pageContents = []

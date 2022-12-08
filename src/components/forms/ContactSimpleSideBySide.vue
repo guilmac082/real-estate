@@ -4,24 +4,17 @@
       <div class="row">
         <div style="display: flex">
           <q-card
-            :class="[
-              'q-pa-sm flex flex-center text-center box-shadow',
-              thm.colors.borderClasses,
-            ]"
-            :style="
-              'margin-bottom: 50px; min-width: 500px; background-color:' +
-              thm.colors.iconsColor +
-              ';'
+            class="q-pa-sm flex flex-center text-center box-shadow"
+            style="
+              margin-bottom: 50px;
+              min-width: 500px;
+              background-color: var(--q-pwb-primary);
             "
           >
             <q-card-section> </q-card-section>
           </q-card>
           <q-card
-            :class="[
-              'q-pa-md flex flex-center text-center box-shadow',
-              thm.colors.borderClasses,
-              thm.colors.bottomLined ? 'bottom-lined' : '',
-            ]"
+            class="q-pa-sm text-center box-shadow"
             style="min-width: 500px; margin: 60px 40px 0px -250px"
           >
             <q-card-section class="w-full">
@@ -33,29 +26,24 @@
                 </q-input>
                 <q-input bg-color="white" outlined label="Your Email *">
                   <template v-slot:append>
-                    <q-icon name="email" :style="'color:' + thm.colors.iconsColor" />
+                    <q-icon name="email" style="color: var(--q-pwb-icons)" />
                   </template>
                 </q-input>
                 <q-input bg-color="white" outlined label="Your Phone *">
                   <template v-slot:append>
-                    <q-icon name="phone" :style="'color:' + thm.colors.iconsColor" />
+                    <q-icon name="phone" style="color: var(--q-pwb-icons)" />
                   </template>
                 </q-input>
               </div>
               <div class="q-mt-md col-sm-12">
                 <q-btn
                   size="md"
-                  :style="
-                    'background:' +
-                    thm.colors.buttonsColor +
-                    '; color:' +
-                    thm.colors.buttonsColorContrast
+                  style="
+                    background: var(--q-pwb-buttons);
+                    color: var(--q-pwb-buttons-contrast);
                   "
                   label="Send Message"
-                  :class="[
-                    'q-mb-none q-pb-none',
-                    thm.colors.noBorderRadius ? 'no-border-radius' : '',
-                  ]"
+                  class="q-mb-none q-pb-none"
                 />
               </div>
             </q-card-section>
@@ -65,10 +53,7 @@
     </div>
     <div class="contact-us-right-ctr col-md-4 col-lg-4 col-xs-12 col-sm-12">
       <div>
-        <h4
-          class="text-center text-h4 q-my-md"
-          :style="'color:' + thm.colors.buttonsColor"
-        >
+        <h4 class="text-center text-h4 q-my-md" style="color: var(--q-pwb-buttons)">
           Luxury Listings Marbella
           <br />
         </h4>
@@ -79,7 +64,12 @@
         </div>
         <div class="text-left text-black text-h6 q-mx-sm q-px-sm">
           <div>
-            <q-icon size="1.3em" class="q-pb-sm q-px-md" color="black" name="phone" />
+            <q-icon
+              size="1.3em"
+              class="q-pb-sm q-px-md"
+              style="color: var(--q-pwb-icons)"
+              name="phone"
+            />
             <a style="color: black; text-decoration: none" href="tel:+34 623 395 164"
               >TEL: +34 623 395 164</a
             >
@@ -90,7 +80,12 @@
               href="mailto:info@luxurylistingsmarbella.com"
             >
               <span>
-                <q-icon size="1.3em" class="q-pb-sm q-px-md" color="black" name="email" />
+                <q-icon
+                  size="1.3em"
+                  class="q-pb-sm q-px-md"
+                  style="color: var(--q-pwb-icons)"
+                  name="email"
+                />
               </span>
               <span> info@luxurylistingsmarbella.com </span>
             </a>
@@ -104,7 +99,7 @@
                 <q-icon
                   :name="mdiFacebook"
                   class="q-pb-sm q-px-md"
-                  style="font-size: 2rem"
+                  style="font-size: 2rem; color: var(--q-pwb-icons)"
                 />
               </span>
               <span class="">@luxurylistingsmarbella</span>
@@ -118,7 +113,7 @@
               <q-icon
                 :name="mdiInstagram"
                 class="q-pb-sm q-px-md"
-                style="font-size: 2rem"
+                style="font-size: 2rem; color: var(--q-pwb-icons)"
               />
               <span class="">@luxurylistingsmarbella</span>
             </a>
@@ -162,14 +157,14 @@ export default defineComponent({
   // inject: ['themeConfig'],
   mounted() {},
   props: {
-    thm: {
-      type: Object,
-      default() {
-        return {
-          colors: {},
-        }
-      },
-    },
+    // thm: {
+    //   type: Object,
+    //   default() {
+    //     return {
+    //       colors: {},
+    //     }
+    //   },
+    // },
   },
   data() {
     return {}
@@ -179,6 +174,8 @@ export default defineComponent({
 </script>
 <style>
 .custom-hr-contact {
+  background-color: var(--q-pwb-borders);
+  border: 2px solid var(--q-pwb-borders);
   /* border: 2px solid v-bind("thm.colors.bordersColor");
   background-color: v-bind("thm.colors.bordersColor"); */
   width: 25%;
