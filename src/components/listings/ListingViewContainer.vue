@@ -133,7 +133,7 @@
           width="100%"
           height="450"
           frameborder="0"
-          src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBPeKxIfOXlq969Qd4n10kbnVYnTVZ6sLY&amp;q=Torremolinos,+España"
+          src=""
           allowfullscreen="allowfullscreen"
           style="border: 0px"
         ></iframe>
